@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <title>Слайдер изображений</title>
+  <style>
+    body {
+      overflow: hidden; 
+       
+        }
+
+    /* Стили для десктопной версии */
+    @media only screen and (min-width: 800px) {
+      .swiper-container {
+        width: 50%; 
+        margin: 0 auto;
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 30px;
+        height: 30px; 
+      }
+      .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down; 
+        
+    }
+    }
+
+    /* Стили для мобильной версии */
+    @media only screen and (max-width: 780px) {
+   
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 20px; 
+        height: 20px; 
+      }
+      .swiper-slide img {
+        width: 100%;
+        height: auto; 
+        object-fit:scale-down;
+        position: relative;
+        height: 100vh;
+      }
+
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/instagram.png" alt="Image 1"></div>
+      <div class="swiper-slide"><img src="images/telegram.png" alt="Image 2"></div>
+      <div class="swiper-slide"><img src="images/vkontakte.png" alt="Image 3"></div>
+      <div class="swiper-slide"><img src="images/whatsapp.png" alt="Image 4"></div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Инициализируем Swiper
+    var swiper = new Swiper('.swiper-container', {
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>
